@@ -1,0 +1,12 @@
+---
+import { Section, H2 } from "@ui";
+
+interface Props {
+  success?: boolean;
+  id?: string;
+}
+
+const { success = false, id = "form" } = Astro.props;
+---
+
+<div class="form"></div>
