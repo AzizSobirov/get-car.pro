@@ -6,6 +6,180 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
 <App title="Главная">
   <main>
     <!-- Intro -->
-    <Section name="intro" />
+    <Section name="intro">
+      <H2>
+        Подберем <span>качественный автомобиль</span>
+        <br /> в Москве и Санкт-Петербурге
+      </H2>
+      <div class="intro__img">
+        <Image class="img-1" src="intro/1.png" />
+      </div>
+      <div class="intro__we-do">
+        <p>
+          Выполняем заказы на поиск <br />
+          автомобиля под ключ <span class="text-primary">от 2 дней</span>
+        </p>
+        <div
+          class="btn variant-outline"
+          role="button"
+          aria-label="Подробнее"
+          tabindex="0"
+        >
+          Подобрать автомобиль
+        </div>
+      </div>
+      <div class="intro__discount">
+        <div class="intro__discount-title">ТОЛЬКО ДО КОНЦА ОКТЯБРЯ</div>
+        <H2>Подбор под ключ</H2>
+        <div class="intro__discount-price">
+          <H2>10 000 ₽ </H2>
+          <div class="text-gray">30 000 ₽</div>
+        </div>
+        <form class="intro__discount-form" id="form">
+          <input type="text" name="phone" placeholder="+7 999-99-99" required />
+          <button type="submit" aria-label="Подобрать">подобрать авто</button>
+        </form>
+      </div>
+    </Section>
+
+    <!-- Choose the best -->
+    <Section name="best" main>
+      <H2 class="title">
+        Выбирайте <span class="text-primary">лучших</span>
+      </H2>
+      <ul class="best__list">
+        <li class="best__list-item">
+          <H2>КОЛИЧЕСТВО</H2>
+          <p class="best__list-desc">
+            ежедневно мы осматриваем более 30-ти автомобилей, что позволяет нам
+            оперативно уберечь вас от хлама, и в кратчайшие сроки подобрать
+            хороший автомобиль
+          </p>
+        </li>
+        <li class="best__list-item">
+          <H2>КАЧЕСТВО</H2>
+          <p class="best__list-desc">
+            имеем самое передовое техническое оснащение. Можем проводить
+            диагностику любых автомобилей, вплоть до самых свежих версий
+            немецких флагманов.
+          </p>
+        </li>
+        <li class="best__list-item">
+          <H2>СКОРОСТЬ</H2>
+          <p class="best__list-desc">
+            имеем несколько собственных автосервисов с подъёмниками, что
+            позволяет существенно увеличить количество диагностируемых авто и
+            снизить цену на подбор.
+          </p>
+        </li>
+      </ul>
+      <div class="subtitle reversed">
+        <span> Выполняем заказы на поиск автомобиля под ключ</span>
+        от 3 дней
+      </div>
+    </Section>
+
+    <!-- Reviews -->
+    <Section name="reviews">
+      <H2>
+        Сотни <span class="text-primary">положительных отзывов</span>
+        на разных площадках
+      </H2>
+
+      <div class="reviews__swiper swiper">
+        <div class="swiper-wrapper">
+          {
+            Array.from({ length: 6 }).map((_, i) => (
+              <div class="swiper-slide reviews__review">
+                <div class="reviews__review-user">
+                  <div class="reviews__review-img">
+                    <H2>И</H2>
+                  </div>
+                  <div class="flex-col">
+                    <div class="reviews__review-name">Иван Иванов</div>
+                    <div class="reviews__review-stars">
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                    </div>
+                  </div>
+                </div>
+                <p class="reviews__review-desc">
+                  Спасибо огромное ребятам за подбор машины. Давно хотел сменить
+                  свой старый форда на более свежую машину, мне помогли
+                  подобрать мазду 6 2018 года в идеальном состоянии, езжу и
+                  радуюсь))
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="reviews__footer">
+        <div class="reviews__footer-logos">
+          <Image src="logos/yandex.svg" />
+          <Image src="logos/avito.svg" />
+        </div>
+        <div class="reviews__footer-navigation">
+          <div
+            class="swiper-button-prev"
+            role="button"
+            aria-label="Назад"
+            tabindex="0"
+          >
+          </div>
+          <div
+            class="swiper-button-next"
+            role="button"
+            aria-label="Вперед"
+            tabindex="0"
+          >
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- About -->
+    <Section name="about">
+      <div
+        class="about__video"
+        data-fancybox="about"
+        data-src="https://youtu.be/U74rtOCuB-k?si=ZgmrMpKJiUvLXyR6"
+        role="button"
+        aria-label="Play video"
+        tabindex="-1"
+      >
+        <div class="bg-img">
+          <Image src="about-poster.png" />
+        </div>
+
+        <Icon src="play.svg" />
+        <span>О нашей компании</span>
+      </div>
+      <div class="about__text">
+        Множество компаний сегодня предлагает услуги автоподбора. Они
+        соревнуются друг с другом, уверяя, что именно их сервис — лучший.
+        <br /><br />
+        Автоблогеры активно продвигают свои бренды, но часто далеки от реальной работы
+        с подбором.
+        <br /><br />
+        Даже "эксперты" с досок объявлений, вооружившись толщиномером и серьезным
+        выражением лица, претендуют на звание профессионалов. Однако каждый раз автоподбор
+        превращается в игру на удачу.
+        <br /><br />
+        <strong>
+          С нами же — <span>вы</span> можете быть <span>уверены</span> в профессионализме
+          и высоком <span>качестве результата</span>.
+        </strong>
+      </div>
+    </Section>
+
+    <!-- What we check -->
+    <Section name="check">
+      .check
+    </Section>
   </main>
 </App>

@@ -209,6 +209,25 @@ forms.forEach((form) => {
 });
 
 // swiper
+var reviewsSwiper = new Swiper(".reviews .swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 15,
+  navigation: {
+    nextEl: ".reviews .swiper-button-next",
+    prevEl: ".reviews .swiper-button-prev",
+  },
+  breakpoints: {
+    769: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1025: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
+});
+
 // var gallerySwiper = new Swiper(".gallery .swiper", {
 //   slidesPerView: 2,
 //   spaceBetween: 10,
@@ -229,7 +248,7 @@ forms.forEach((form) => {
 // });
 
 // fancybox
-let dataFancybox = ["gallery", "reviews"];
+let dataFancybox = ["gallery", "reviews", "about"];
 dataFancybox.forEach((name) => {
   Fancybox.bind(`[data-fancybox="${name}"]`, {
     Images: { Panzoom: { maxScale: 3 } },
