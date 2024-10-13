@@ -144,58 +144,83 @@
 .subtitle {
   position: relative;
   margin-top: 10px;
-  padding: 20px 0 20px 40px;
+  padding: 20px 40px 20px 0;
   color: #fff;
   font-size: 20px;
 
-  @include media("lg") {
-    padding: 15px 0 15px 40px;
-    font-size: 16px;
-  }
-
-  @include media("sm") {
-    padding: 10px 0 10px 40px;
-    font-size: 14px;
-  }
-
   &.reversed {
+    padding: 20px 0 20px 40px;
     margin-left: auto;
     text-align: right;
-  }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 100%;
-    transform: skew(25deg);
-    background: var(--text-color);
-    z-index: -1;
+    &::before {
+      left: 0;
+      transform: skew(25deg);
+    }
 
-    @include media("sm") {
+    &::after {
       left: 15px;
+      transform: skew(25deg);
     }
   }
 
+  @include media("lg") {
+    padding: 15px 40px 15px 0;
+    font-size: 16px;
+
+    &.reversed {
+      padding: 15px 0 15px 40px;
+    }
+  }
+
+  @include media("sm") {
+    padding: 10px 40px 10px 0;
+    font-size: 14px;
+
+    &.reversed {
+      padding: 10px 0 10px 40px;
+
+      &::before {
+        left: 15px;
+      }
+
+      &::after {
+        left: 30px;
+      }
+    }
+  }
+
+  &::before,
   &::after {
     content: "";
     position: absolute;
     top: 0;
-    left: 15px;
-    width: 100vw;
     height: 100%;
-    transform: skew(25deg);
-    background: var(--primary);
+    transform: skew(-25deg);
     z-index: -1;
+  }
+
+  &::before {
+    right: 0;
+    width: 10px;
+    background: var(--text-color);
 
     @include media("sm") {
-      left: 30px;
+      right: 15px;
     }
   }
 
-  span {
+  &::after {
+    right: 15px;
+    width: 100vw;
+    background: var(--primary);
+
+    @include media("sm") {
+      right: 30px;
+    }
+  }
+
+  .text-primary {
     color: #ffc1bd;
   }
 }

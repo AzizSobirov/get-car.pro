@@ -74,7 +74,9 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
         </li>
       </ul>
       <div class="subtitle reversed">
-        <span> Выполняем заказы на поиск автомобиля под ключ</span>
+        <span class="text-primary">
+          Выполняем заказы на поиск автомобиля под ключ</span
+        >
         от 3 дней
       </div>
     </Section>
@@ -253,8 +255,218 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
 
     <!-- Our services -->
     <Section name="services">
+      <div class="bg-img">
+        <Image src="services-bg.svg" />
+      </div>
+
       <H2 class="title">Наши <span class="text-primary">услуги</span></H2>
-      .services
+
+      <div class="services__list">
+        <div class="services__service">
+          <Icon src="car-insurance.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Подбор автомобиля с пробегом под ключ
+            </div>
+            <ul class="services__service-list">
+              <li>Поиск и проверка автомобилей до результата</li>
+              <li>Комплексная проверка</li>
+              <li>Торг с продавцом</li>
+              <li>Сопровождение сделки</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 10 000 руб.</span>
+              <span class="line-through">от 30 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="broken-car.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Выездная диагностика автомобиля
+            </div>
+            <ul class="services__service-list">
+              <li>Комплексная диагностика автомобиля.</li>
+              <li>Экспертиза перед покупкой.</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 4 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="courier.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Автоэксперт <br /> на день
+            </div>
+            <ul class="services__service-list">
+              <li>Осмотр нескольких автомобилей в течение дня.</li>
+              <li>Передвижение на автомобиле эксперта.</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 12 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="engine.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Эндоскопия <br />
+              двигателя
+            </div>
+            <div class="services__service-text">Определим:</div>
+            <ul class="services__service-list">
+              <li>Износ стенок цилиндров (задиры)</li>
+              <li>Состояние форсунок</li>
+              <li>Состояние маслосъемных колпачков</li>
+              <li>Состояние клапанов</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 5 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="car-insurance2.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Подбор нового автомобиля
+            </div>
+            <ul class="services__service-list">
+              <li>Найдем лучшее предложение среди официальных дилеров</li>
+              <li>Получим максимальную скидку.​​​​​​</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 20 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="money.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Оценка <br /> перед продажей
+            </div>
+            <ul class="services__service-list">
+              <li>Проверка автомобиля и определение его рыночной стоимости.</li>
+              <li>Консультация эксперта по правильной и безопасной продаже</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 6 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services__additional">
+        <H2>Дополнительные <span class="text-primary">услуги</span></H2>
+
+        <ul class="services__additional-list">
+          <li class="services__additional-item">
+            <div class="services__additional-title">
+              Проверка нового автомобиля перед получением в автосалоне
+            </div>
+            <div class="text-primary">от 5 000 руб.</div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+            >
+              Заказать
+            </div>
+          </li>
+          <li class="services__additional-item">
+            <div class="services__additional-title">
+              Сопровождение сделки в ГИБДД
+            </div>
+            <div class="text-primary">от 5 000 руб.</div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+            >
+              Заказать
+            </div>
+          </li>
+          <li class="services__additional-item">
+            <div class="services__additional-title">Перегон автомобиля</div>
+            <div class="text-primary">от 10 000 руб.</div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+            >
+              Заказать
+            </div>
+          </li>
+        </ul>
+
+        <div class="subtitle">
+          В 90% случаев стоимость автоподбора бесплатна, за счет
+          аргументированного торга
+        </div>
+      </div>
     </Section>
+
+    <div class="example"></div>
   </main>
 </App>

@@ -752,11 +752,163 @@ section {
 
 // ** services ** //
 .services {
+  position: relative;
+
+  .bg-img {
+    top: -10%;
+    height: auto;
+    overflow: visible;
+
+    @include media("lg") {
+      top: 0;
+      height: 100%;
+    }
+    @include media("sm") {
+      height: 50%;
+    }
+  }
+
   &__inner {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 70px;
+    gap: 50px;
+
+    @include media("xs") {
+      gap: 30px;
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 20px;
+
+    @include media("xl") {
+      margin-top: 0;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media("md") {
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__service {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    --icon-size: 100px;
+
+    @include media("lg") {
+      --icon-size: 80px;
+    }
+    @include media("xs") {
+      --icon-size: 48px;
+      gap: 10px;
+    }
+
+    &-content {
+      flex-grow: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    &-text {
+      font-family: var(--font-secondary);
+    }
+
+    &-list {
+      margin-bottom: 6px;
+      padding-left: 24px;
+      font-family: var(--font-secondary);
+      list-style-image: url("../img/icons/check.svg");
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+
+      @include media("xs") {
+        li {
+          padding-left: 4px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-price {
+      margin-top: auto;
+      margin-bottom: 6px;
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      gap: 10px;
+
+      .line-through {
+        font-size: 10px;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  &__additional {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+
+    @include media("md") {
+      margin-top: 10px;
+      gap: 25px;
+    }
+
+    &-list {
+      width: 100%;
+      max-width: 1020px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    &-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+
+      @include media("md") {
+        gap: 30px;
+      }
+      @include media("sm") {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 20px 10px;
+
+        .services__additional-title {
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+
+      .text-primary {
+        margin-left: auto;
+        min-width: 140px;
+      }
+    }
   }
 }
 
@@ -803,6 +955,10 @@ section {
       }
     }
   }
+}
+
+.example {
+  min-height: 100vh;
 }
 
 // @include show(".services");
