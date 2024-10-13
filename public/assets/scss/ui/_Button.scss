@@ -16,13 +16,15 @@
     padding: 10px 22px;
     border: 1px solid var(--primary);
     border-radius: 10px;
+    line-height: 1;
+    white-space: nowrap;
 
     &:hover {
       color: #fff;
       background: var(--primary);
     }
 
-    @include media("xs") {
+    @include media("sm") {
       font-size: 14px;
     }
   }

@@ -80,7 +80,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
     </Section>
 
     <!-- Reviews -->
-    <Section name="reviews">
+    <Section name="reviews" id="reviews">
       <H2>
         Сотни <span class="text-primary">положительных отзывов</span>
         на разных площадках
@@ -179,7 +179,82 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
 
     <!-- What we check -->
     <Section name="check">
-      .check
+      <div class="bg-img">
+        <Image src="check/bg.svg" />
+      </div>
+
+      <H2 class="title"> Что мы <span class="text-primary">проверяем</span></H2>
+
+      <div class="check__img">
+        <Image src="check/car.png" />
+
+        <div class="tooltip tooltip-1">
+          <div class="tooltip__trigger"></div>
+          <div class="tooltip__content">
+            <p>Эндоскопия двигателя и осмотр его состояния</p>
+          </div>
+        </div>
+
+        <div class="tooltip tooltip-2">
+          <div class="tooltip__trigger"></div>
+          <div class="tooltip__content">
+            <p>Проверка системы безопасности и наличия подушек</p>
+          </div>
+        </div>
+
+        <div class="tooltip tooltip-3">
+          <div class="tooltip__trigger"></div>
+          <div class="tooltip__content">
+            <p>
+              Осмотр дефектов под резинками, обнаружение не заводских сварочных
+              швов
+            </p>
+          </div>
+        </div>
+
+        <div class="tooltip tooltip-4">
+          <div class="tooltip__trigger"></div>
+          <div class="tooltip__content">
+            <p>Проверка ЛКП толщинометром и визуальный осмотр состояния ЛКП</p>
+          </div>
+        </div>
+
+        <div class="tooltip tooltip-5">
+          <div class="tooltip__trigger"></div>
+          <div class="tooltip__content">
+            <p>Проверка тормозной системы автомобиля</p>
+          </div>
+        </div>
+
+        <div class="tooltip tooltip-6">
+          <div class="tooltip__trigger"></div>
+          <div class="tooltip__content">
+            <p>Проверка автомобиля на подъемнике</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="check__footer">
+        <div class="check__footer-title">
+          В <span>нашей команде</span> самые <span>сильные мастера</span> - диагносты,
+          <span>наш опыт</span> и богатое техническое оснащение в полном праве позволяет
+          называть себя <span>командой №1</span>
+        </div>
+        <div
+          class="btn variant-outline"
+          role="button"
+          tabindex="0"
+          aria-label="Подобрать автомобиль"
+        >
+          Подобрать автомобиль
+        </div>
+      </div>
+    </Section>
+
+    <!-- Our services -->
+    <Section name="services">
+      <H2 class="title">Наши <span class="text-primary">услуги</span></H2>
+      .services
     </Section>
   </main>
 </App>

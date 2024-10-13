@@ -208,6 +208,41 @@ forms.forEach((form) => {
   });
 });
 
+//  What we check
+const checkEl = document.querySelector(".check");
+if (checkEl) {
+  const tooltips = document.querySelectorAll(".tooltip");
+  tooltips.forEach((tooltip, index) => {
+    const trigger = tooltip.querySelector(".tooltip__trigger");
+    const content = tooltip.querySelector(".tooltip__content");
+
+    if (window.innerWidth > 769) {
+      if (index === 0) {
+        content.style.display = "block";
+        setTimeout(() => {
+          content.style.opacity = 1;
+          content.style.transform = "translate(-50%, 0px)";
+        }, 20);
+      }
+
+      trigger.addEventListener("mouseenter", () => {
+        content.style.display = "block";
+        setTimeout(() => {
+          content.style.opacity = 1;
+          content.style.transform = "translate(-50%, 0px)";
+        }, 20);
+      });
+      trigger.addEventListener("mouseleave", () => {
+        content.style.opacity = 0;
+        content.style.transform = "translate(-50%, 10px)";
+        setTimeout(() => {
+          content.style.display = "none";
+        }, 300);
+      });
+    }
+  });
+}
+
 // swiper
 var reviewsSwiper = new Swiper(".reviews .swiper", {
   slidesPerView: "auto",
