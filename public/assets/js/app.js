@@ -263,6 +263,24 @@ var reviewsSwiper = new Swiper(".reviews .swiper", {
   },
 });
 
+var mistakeBeforeSwiper = new Swiper(".mistake .swiper-before", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".mistake .swiper-before .swiper-button-next",
+    prevEl: ".mistake .swiper-before .swiper-button-prev",
+  },
+});
+
+var mistakeAfterSwiper = new Swiper(".mistake .swiper-after", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".mistake .swiper-after .swiper-button-next",
+    prevEl: ".mistake .swiper-after .swiper-button-prev",
+  },
+});
+
 // var gallerySwiper = new Swiper(".gallery .swiper", {
 //   slidesPerView: 2,
 //   spaceBetween: 10,

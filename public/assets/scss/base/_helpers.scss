@@ -99,8 +99,12 @@
 }
 
 .text-h3 {
-  font-size: 29px;
+  font-size: 24px;
   font-weight: 400;
+
+  @include media("sm") {
+    font-size: 18px;
+  }
 }
 
 .title {

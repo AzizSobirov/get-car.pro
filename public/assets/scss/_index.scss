@@ -912,6 +912,140 @@ section {
   }
 }
 
+// ** mistake ** //
+.mistake {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+
+    @include media("sm") {
+      gap: 30px;
+    }
+  }
+
+  .text-h2 {
+    @include media("lg") {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px 20px;
+  }
+
+  &__card {
+    flex: 1 0 380px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+
+    @include media("xs") {
+      flex-basis: 100%;
+      gap: 20px;
+    }
+
+    .text-h3 {
+      margin-bottom: 25px;
+
+      @include media("lg") {
+        margin-bottom: 0;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    .swiper {
+      height: 365px;
+      width: 100%;
+      display: grid;
+      border-radius: 20px;
+      overflow: hidden;
+
+      @include media("lg") {
+        height: 400px;
+      }
+      @include media("sm") {
+        height: 320px;
+      }
+      @include media("xs") {
+        height: 240px;
+      }
+      @include media("380px") {
+        height: 220px;
+      }
+      @include media("350px") {
+        height: 200px;
+      }
+
+      &-wrapper {
+        min-width: 0;
+      }
+
+      &-slide {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-button-prev,
+      &-button-next {
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        background: var(--primary);
+        border-radius: 5px;
+        transition: var(--transition-ease);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2;
+
+        &::after {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-list {
+      padding-left: 24px;
+      width: 100%;
+      font-family: var(--font-secondary);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+
+      &.list-check {
+        list-style-image: url("../img/icons/check.svg");
+      }
+
+      &.list-wrong {
+        list-style-image: url("../img/icons/wrong.svg");
+      }
+
+      @include media("xs") {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 // ** contacts ** //
 .contacts {
   &__item {
@@ -961,4 +1095,4 @@ section {
   min-height: 100vh;
 }
 
-// @include show(".services");
+// @include show(".mistake");

@@ -283,6 +283,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
               role="button"
               tabindex="0"
               aria-label="Заказать"
+              data-modal="form"
             >
               Заказать
             </div>
@@ -307,6 +308,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
               role="button"
               tabindex="0"
               aria-label="Заказать"
+              data-modal="form"
             >
               Заказать
             </div>
@@ -331,6 +333,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
               role="button"
               tabindex="0"
               aria-label="Заказать"
+              data-modal="form"
             >
               Заказать
             </div>
@@ -359,6 +362,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
               role="button"
               tabindex="0"
               aria-label="Заказать"
+              data-modal="form"
             >
               Заказать
             </div>
@@ -383,6 +387,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
               role="button"
               tabindex="0"
               aria-label="Заказать"
+              data-modal="form"
             >
               Заказать
             </div>
@@ -407,6 +412,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
               role="button"
               tabindex="0"
               aria-label="Заказать"
+              data-modal="form"
             >
               Заказать
             </div>
@@ -428,6 +434,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
               role="button"
               tabindex="0"
               aria-label="Заказать"
+              data-modal="form"
             >
               Заказать
             </div>
@@ -442,6 +449,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
               role="button"
               tabindex="0"
               aria-label="Заказать"
+              data-modal="form"
             >
               Заказать
             </div>
@@ -454,6 +462,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
               role="button"
               tabindex="0"
               aria-label="Заказать"
+              data-modal="form"
             >
               Заказать
             </div>
@@ -467,6 +476,81 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
       </div>
     </Section>
 
-    <div class="example"></div>
+    <!-- Mistake -->
+    <Section name="mistake">
+      <H2>
+        Очень легко <span class="text-primary">ошибиться</span> при
+        <span class="text-primary">самостоятельной <br /> покупке</span> автомобиля
+      </H2>
+      <div class="mistake__wrapper">
+        <div class="mistake__card">
+          <H3>
+            Что <span class="text-primary">вам предлагают</span>
+            <br />
+            в объявлении
+          </H3>
+          <div class="swiper swiper-before">
+            <div class="swiper-wrapper">
+              {
+                Array.from({ length: 3 }).map((_, i) => (
+                  <div class="swiper-slide">
+                    <Image src="mistake/before.png" />
+                  </div>
+                ))
+              }
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <ul class="mistake__card-list list-check">
+            <li>
+              Вы нашли автомобиль с пробегом на специализированном сайте или в
+              автосалоне.
+            </li>
+            <li>
+              Он отлично выглядит, полностью устраивает вас по параметрам и
+              цене, это то, что вы искали
+            </li>
+          </ul>
+        </div>
+        <div class="mistake__card">
+          <H3>
+            Что <span class="text-primary">вам продают</span>
+            <br />
+            на самом деле
+          </H3>
+          <div class="swiper swiper-after">
+            <div class="swiper-wrapper">
+              {
+                Array.from({ length: 3 }).map((_, i) => (
+                  <div class="swiper-slide">
+                    <Image src="mistake/after.png" />
+                  </div>
+                ))
+              }
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+          <ul class="mistake__card-list list-wrong">
+            <li>
+              Автомобиль может оказаться криминальным, тогда вы останетесь без
+              машины.
+            </li>
+            <li>
+              Если авто после сильного ДТП, без подушек безопасности, с
+              сомнительным ремонтом кузова – он не спасет вас и ваших близких
+              при аварии.
+            </li>
+            <li>
+              Вам могут продать авто с серьезными техническими проблемами, со
+              скрученным пробегом, в залоге или развалину после такси.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Section>
+
+    <!-- <div class="example"></div> -->
   </main>
 </App>
