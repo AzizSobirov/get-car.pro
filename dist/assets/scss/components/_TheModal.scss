@@ -1,0 +1,125 @@
+/* Styles for the TheModal component */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color: #000000, $alpha: 0.4);
+  }
+
+  .container {
+    position: relative;
+
+    @include media("lg") {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: -100px;
+    left: 45px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 2;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include media("3xl") {
+      left: 95px;
+    }
+    @include media("lg") {
+      top: 25px;
+      left: auto;
+      right: 25px;
+      width: 28px;
+      height: 28px;
+    }
+    @include media("sm") {
+      top: -35px;
+      right: 0;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__content {
+    min-height: 325px;
+    width: 100%;
+    transition: var(--transition-bezier);
+    transform: translateX(20%);
+    opacity: 0;
+    z-index: 2;
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include media("lg") {
+      position: relative;
+      padding: 60px 40px;
+      width: fit-content;
+      justify-content: center;
+      background: var(--primary);
+    }
+    @include media("sm") {
+      padding: 30px 20px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(100%, -50%) skew(25deg);
+      width: 120px;
+      height: 102vh;
+      background: var(--text-color);
+      z-index: -1;
+
+      @include media("3xl") {
+        left: 50px;
+      }
+      @include media("lg") {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 260px;
+      transform: translate(0, -50%) skew(25deg);
+      width: 100vw;
+      height: 102vh;
+      background: var(--primary);
+      z-index: -1;
+
+      @include media("3xl") {
+        left: 310px;
+      }
+      @include media("lg") {
+        // left: 50%;
+        // transform: translate(-50%, -50%) skew(0);
+        display: none;
+      }
+    }
+  }
+}

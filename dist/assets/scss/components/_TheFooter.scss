@@ -1,0 +1,150 @@
+/* Styles for the TheFooter component */
+.footer {
+  padding: 100px 0 60px;
+
+  @include media("xl") {
+    padding: 50px 0 110px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 34px;
+
+    @include media("sm") {
+      gap: 20px;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px 30px;
+
+    @include media("sm") {
+      gap: 30px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+
+      @include nth(1) {
+        width: 215px;
+      }
+      @include nth(2) {
+        width: 305px;
+      }
+      @include nth(3) {
+        width: 215px;
+      }
+      @include nth(4) {
+        width: 285px;
+        gap: 10px;
+
+        img {
+          width: 170px;
+          height: 170px;
+        }
+      }
+
+      .footer__dev {
+        display: flex;
+      }
+
+      @include media("xl") {
+        width: calc(50% - 20px) !important;
+      }
+      @include media("sm") {
+        width: 100% !important;
+
+        .footer__dev {
+          display: none;
+        }
+
+        @include nth(4) {
+          img {
+            width: 140px;
+            height: 140px;
+          }
+        }
+      }
+    }
+
+    &-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    &-title {
+      color: #31424fc6;
+    }
+
+    &-list,
+    &-desc {
+      font-family: var(--font-secondary);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    &-socials {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  }
+
+  &__dev {
+    margin-top: 20px;
+    font-family: var(--font-secondary);
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    svg path {
+      transition: var(--transition-ease);
+    }
+
+    &:hover svg path {
+      fill: var(--primary);
+    }
+
+    @include media("sm") {
+      margin: 10px auto 0;
+      display: flex;
+      font-size: 14px;
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__copyright {
+    width: 100%;
+    color: #959595;
+    font-size: 12px;
+    font-family: var(--font-secondary);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

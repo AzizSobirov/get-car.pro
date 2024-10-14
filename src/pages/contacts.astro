@@ -1,0 +1,58 @@
+---
+import App from "../layouts/App.astro";
+import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
+---
+
+<App title="Контакты">
+  <main>
+    <!-- Contacts -->
+    <Section name="contacts">
+      <H2>Наши <span class="text-primary">контакты</span></H2>
+      <div class="contacts__content">
+        <div class="contacts__item">
+          <div class="flex-row">
+            <span>Москва</span>
+            <a href="#" title="Whatsapp"><Icon src="whatsapp.svg" /></a>
+            <a href="#" title="Telegram"><Icon src="telegram.svg" /></a>
+          </div>
+          <a href="tel:+79316665511" title="Телефон"> +7 (931) 666-55-11 </a>
+        </div>
+        <div class="contacts__item">
+          <div class="flex-row">
+            <span>Санкт-Петербург</span>
+            <a href="#" title="Whatsapp"><Icon src="whatsapp.svg" /></a>
+            <a href="#" title="Telegram"><Icon src="telegram.svg" /></a>
+          </div>
+          <a href="tel:+79316665511" title="Телефон"> +7 (931) 666-55-11 </a>
+        </div>
+        <a href="mailto:info@get-car.pro" title="Email">info@get-car.pro</a>
+      </div>
+      <div class="contacts__map">
+        <iframe
+          src="https://yandex.uz/map-widget/v1/?ll=30.314997%2C59.938784&z=11"
+          width="560"
+          height="400"
+          allowfullscreen="true"></iframe>
+      </div>
+    </Section>
+
+    <!-- News -->
+    <Section name="news">
+      <div class="news__text">
+        <p>
+          Актуальные новости и полезная информация в наших соцсетях. Узнавайте
+          первыми о событиях в автомире и в работе нашего автоподбора.
+        </p>
+        <Image src="qr.svg" />
+      </div>
+      <div class="news__img">
+        <Image src="news-img.png" />
+        <div class="lines">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>
