@@ -305,7 +305,7 @@ var mistakeAfterSwiper = new Swiper(".mistake .swiper-after", {
 // });
 
 // fancybox
-let dataFancybox = ["gallery", "reviews", "about"];
+let dataFancybox = ["gallery", "reviews", "about", "points"];
 dataFancybox.forEach((name) => {
   Fancybox.bind(`[data-fancybox="${name}"]`, {
     Images: { Panzoom: { maxScale: 3 } },

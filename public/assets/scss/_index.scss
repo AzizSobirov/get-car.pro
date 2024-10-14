@@ -1208,6 +1208,161 @@ section {
   }
 }
 
+// ** points ** //
+.points {
+  position: relative;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+
+    @include media("xs") {
+      gap: 30px;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px 20px;
+
+    @include media("xl") {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px 20px;
+    }
+    @include media("md") {
+      grid-template-columns: 1fr;
+      gap: 30px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__service {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+
+    &-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+      --icon-size: 60px;
+
+      @include media("641px", min-width) {
+        .text-h3 {
+          font-size: 22px;
+        }
+      }
+      @include media("sm") {
+        --icon-size: 48px;
+        gap: 10px;
+      }
+      @include media("xs") {
+        .text-h3 {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-list {
+      margin-bottom: 6px;
+      padding-left: 20px;
+      font-family: var(--font-secondary);
+      list-style: disc;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+
+      li::marker {
+        color: var(--primary);
+      }
+
+      @include media("xs") {
+        li {
+          padding-left: 4px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-link {
+      position: relative;
+      margin-top: auto;
+      color: var(--primary);
+      font-family: var(--font-secondary);
+
+      @include media("xs") {
+        font-size: 14px;
+      }
+
+      &:hover::after {
+        right: -15px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translate(100%, -50%);
+        width: 21px;
+        height: 10px;
+        background: url("../img/icons/arrow-right.svg") center/contain no-repeat;
+        transition: var(--transition-ease);
+      }
+    }
+  }
+
+  &__point {
+    display: none;
+    max-width: 580px;
+
+    @include media("xs") {
+      padding: 20px;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .points__service-list {
+      padding-right: 15px;
+      max-height: 70vh;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        background-color: #f2f4fb;
+        border-radius: 20px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: #f2f4fb;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--primary);
+        border: none;
+        box-shadow: none;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
 // ** contacts ** //
 .contacts {
   &__item {
@@ -1257,4 +1412,4 @@ section {
   min-height: 100vh;
 }
 
-// @include show(".application");
+// @include show(".points");
