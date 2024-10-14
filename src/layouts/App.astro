@@ -1,4 +1,5 @@
 ---
+import { Image } from "@ui";
 import { TheHeader, TheFooter, TheModal } from "@components";
 import "../../public/assets/scss/app.scss";
 import type { PageSEO } from "@types";
@@ -35,9 +36,19 @@ const { title = _meta.title, meta = _meta } = Astro.props as PageSEO;
     <!-- Main -->
     <slot />
     <!-- TheFooter -->
-    <!-- <TheFooter /> -->
+    <TheFooter />
     <!-- TheModal -->
     <TheModal />
+    <!-- TheQRCode -->
+    <a
+      href="https://t.me/"
+      class="qr"
+      title="Подпишись на наш телеграм канал"
+      target="_blank"
+    >
+      <span>Подпишись на наш телеграм канал</span>
+      <Image src="qr-gray.svg" />
+    </a>
     <slot name="footer" />
 
     <!-- Scripts -->

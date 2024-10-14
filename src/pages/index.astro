@@ -151,7 +151,7 @@ import { TheForm } from "@components";
       <div
         class="about__video"
         data-fancybox="about"
-        data-src="https://youtu.be/U74rtOCuB-k?si=ZgmrMpKJiUvLXyR6"
+        data-src="./assets/videos/test.mp4"
         role="button"
         aria-label="Play video"
         tabindex="-1"
@@ -907,12 +907,15 @@ import { TheForm } from "@components";
         <div class="points__service">
           <div class="points__service-header">
             <Icon src="manual.svg" />
-            <H3 class="text-primary">Проверка <br> трансмиссии </H3>
+            <H3 class="text-primary">Проверка <br /> трансмиссии </H3>
           </div>
           <ul class="points__service-list">
-              <li>Проверка уровня и качества масла в трансмиссии, при возможности таковой</li>
-              <li>Проверка, где и как обслуживалась трансмиссия</li>
-              <li>Проверка работоспособности трансмиссии</li>
+            <li>
+              Проверка уровня и качества масла в трансмиссии, при возможности
+              таковой
+            </li>
+            <li>Проверка, где и как обслуживалась трансмиссия</li>
+            <li>Проверка работоспособности трансмиссии</li>
           </ul>
           <div
             class="points__service-link"
@@ -929,14 +932,25 @@ import { TheForm } from "@components";
             <div class="points__point-content">
               <H3 class="text-primary">Проверка трансмиссии</H3>
               <ul class="points__service-list">
-                  <li>Проверка уровня и качества масла в трансмиссии, при возможности таковой</li>
-                  <li>Проверка, где и как обслуживалась трансмиссия</li>
-                  <li>Проверка работоспособности трансмиссии</li>
-                  <li>Оценка общего износа</li>
-                  <li>Выявление электронных ошибок </li>
-                  <li>Проверка трансмиссии и в предельных режимах, при возможности </li>
-                  <li>Оценка состояния износа фрикционов сцепления и корректность работы выжимного механизма (для МКПП)</li>
-                  <li>Визуальный осмотр на предмет течи масла, при наличии возможности </li>
+                <li>
+                  Проверка уровня и качества масла в трансмиссии, при
+                  возможности таковой
+                </li>
+                <li>Проверка, где и как обслуживалась трансмиссия</li>
+                <li>Проверка работоспособности трансмиссии</li>
+                <li>Оценка общего износа</li>
+                <li>Выявление электронных ошибок</li>
+                <li>
+                  Проверка трансмиссии и в предельных режимах, при возможности
+                </li>
+                <li>
+                  Оценка состояния износа фрикционов сцепления и корректность
+                  работы выжимного механизма (для МКПП)
+                </li>
+                <li>
+                  Визуальный осмотр на предмет течи масла, при наличии
+                  возможности
+                </li>
               </ul>
             </div>
           </div>
@@ -948,10 +962,10 @@ import { TheForm } from "@components";
             <H3 class="text-primary">Компьютерная диагностика </H3>
           </div>
           <ul class="points__service-list">
-              <li>Проверка работоспособности электроники</li>
-              <li>Выявление ошибок в блоке ABS</li>
-              <li>Выявление ошибок в блоке SRS</li>
-              <li>Выявление ошибок в блоке климат контроля</li>
+            <li>Проверка работоспособности электроники</li>
+            <li>Выявление ошибок в блоке ABS</li>
+            <li>Выявление ошибок в блоке SRS</li>
+            <li>Выявление ошибок в блоке климат контроля</li>
           </ul>
           <div
             class="points__service-link"
@@ -968,35 +982,285 @@ import { TheForm } from "@components";
             <div class="points__point-content">
               <H3 class="text-primary">Компьютерная диагностика</H3>
               <ul class="points__service-list">
-                  <li>Проверка роботоспособности электроники</li>
-                  <li>Выявление ошибок в блоке ABS</li>
-                  <li>Выявление ошибок в блоке SRS</li>
-                  <li>Выявление ошибок в блоке климат контроля</li>
-                  <li>Выявление ошибок в блоке управления двигателем</li>
-                  <li>Выявление ошибок в блоке управления трансмиссией</li>
-                  <li>Выявление ошибок в блоке управления электронного ключа</li>
-                  <li>Выявление ошибок в блоке управления поного привода</li>
-                  <li>Выявление ошибок в блоке управления сертификацией</li>
-                  <li>Выявление ошибок в блоке управления дверей</li>
-                  <li>Выявление ошибок в блоке управления сервоприводов</li>
-                  <li>Выявление ошибок в блоке управления стояночным тормозом</li>
-                  <li>Выявление ошибок в блоке управления освещением</li>
-                  <li>Выявление ошибок в блоке управления парковочным ассистентом</li>
-                  <li>Выявление ошибок в блоке управления подвеской (для пневмоподвески)</li>
-                  <li>Выявление ошибок в блоке управления мультимедиа</li>
-                  <li>Поиск и сравнение подлинности пробега при наличии технической такой же возможности </li>
-                  <li>Выявление VIN номера</li>
-                  <li>Проверка истории ошибок автомобиля</li>
-                  <li>Проверка напряжения в сети</li>
-                  <li>Анализ текущих параметров</li>
-                  <li>Анализ пройденного пробега после сброса кодов ошибок</li>
+                <li>Проверка роботоспособности электроники</li>
+                <li>Выявление ошибок в блоке ABS</li>
+                <li>Выявление ошибок в блоке SRS</li>
+                <li>Выявление ошибок в блоке климат контроля</li>
+                <li>Выявление ошибок в блоке управления двигателем</li>
+                <li>Выявление ошибок в блоке управления трансмиссией</li>
+                <li>Выявление ошибок в блоке управления электронного ключа</li>
+                <li>Выявление ошибок в блоке управления поного привода</li>
+                <li>Выявление ошибок в блоке управления сертификацией</li>
+                <li>Выявление ошибок в блоке управления дверей</li>
+                <li>Выявление ошибок в блоке управления сервоприводов</li>
+                <li>Выявление ошибок в блоке управления стояночным тормозом</li>
+                <li>Выявление ошибок в блоке управления освещением</li>
+                <li>
+                  Выявление ошибок в блоке управления парковочным ассистентом
+                </li>
+                <li>
+                  Выявление ошибок в блоке управления подвеской (для
+                  пневмоподвески)
+                </li>
+                <li>Выявление ошибок в блоке управления мультимедиа</li>
+                <li>
+                  Поиск и сравнение подлинности пробега при наличии технической
+                  такой же возможности
+                </li>
+                <li>Выявление VIN номера</li>
+                <li>Проверка истории ошибок автомобиля</li>
+                <li>Проверка напряжения в сети</li>
+                <li>Анализ текущих параметров</li>
+                <li>Анализ пройденного пробега после сброса кодов ошибок</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </Section>
+
+    <!-- Recommend -->
+    <Section name="recommend">
+      <H2 class="title">
+        Мы - те, <span class="text-primary">кого рекомендуют </span>
+      </H2>
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {
+            Array.from({ length: 6 }).map((_, i) => (
+              <div
+                class="swiper-slide"
+                data-fancybox="recommend"
+                data-src="./assets/img/recommend/1.png"
+              >
+                <Image src="recommend/1.png" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="recommend__navigation">
+        <div
+          class="swiper-button-prev"
+          role="button"
+          aria-label="Назад"
+          tabindex="0"
+        >
+        </div>
+        <div
+          class="swiper-button-next"
+          role="button"
+          aria-label="Вперед"
+          tabindex="0"
+        >
+        </div>
+      </div>
+    </Section>
+
+    <!-- News -->
+    <Section name="news">
+      <div class="news__text">
+        <p>
+          Актуальные новости и полезная информация в наших соцсетях. Узнавайте
+          первыми о событиях в автомире и в работе нашего автоподбора.
+        </p>
+        <Image src="qr.svg" />
+      </div>
+      <div class="news__img">
+        <Image src="news-img.png" />
+        <div class="lines">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Daily Report -->
+    <Section name="report">
+      <Image class="report__img" src="report-img.png" />
+      <div class="report__text">
+        <H2>Ежедневный отчет о проверке автомобиля вам на телефон</H2>
+        <div class="report__text-desc">
+          Результаты проверки, подробные отчеты и наши рекомендации по выбору
+          автомобиля Вы сможете получить черз удобный для Вас способ связи.
+          <br /><br />
+          Оперативно высылаем листы осмотра, и всю информацию по проверенным автомобилям.
+        </div>
+        <div
+          class="btn variant-outline"
+          role="button"
+          aria-label="Подобрать автомобиль"
+          tabindex="0"
+          data-modal="form"
+        >
+          Подобрать автомобиль
+        </div>
+      </div>
+      <div class="subtitle">
+        <div></div>
+      </div>
+    </Section>
+
+    <!-- FAQ -->
+    <Section name="faq">
+      <H2 class="title">Отвечаем на <span>ваши вопросы</span></H2>
+      <div class="faq__list">
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Заключается ли договор на подбор автомобиля?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Сколько времени обычно занимает автоподбор?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            А если вы не сможете подобрать автомобиль, который я заказываю?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Могу ли я отказаться от найденного автомобиля?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Вы проводите осмотр автомобиля на подъемнике?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Делаете ли вы эндоскопию
+            двигателя?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </Section>
   </main>
 
-  <div class="example"></div>
 </App>

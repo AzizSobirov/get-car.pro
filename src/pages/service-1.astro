@@ -1,0 +1,1117 @@
+---
+import App from "../layouts/App.astro";
+import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
+import { TheForm } from "@components";
+---
+
+<App title="Подбор нового автомобиля">
+  <main>
+    <!-- Intro -->
+    <Section name="intro">
+      <H2>
+        Подберем <span>новый автомобиль</span>
+        <br /> в Москве и Санкт-Петербурге
+      </H2>
+      <div class="intro__img">
+        <Image class="img-2" src="intro/2.png" />
+      </div>
+      <div class="intro__we-do">
+        <p>
+          Выполняем заказы на поиск <br />
+          автомобиля под ключ <span class="text-primary">от 2 дней</span>
+        </p>
+        <div
+          class="btn variant-outline"
+          role="button"
+          aria-label="Подобрать автомобиль"
+          tabindex="0"
+          data-modal="form"
+        >
+          Подобрать автомобиль
+        </div>
+      </div>
+      <div class="intro__discount">
+        <div class="intro__discount-title">ТОЛЬКО ДО КОНЦА ОКТЯБРЯ</div>
+        <H2>Подбор нового <br /> авто</H2>
+        <div class="intro__discount-price">
+          <H2>20 000 ₽ </H2>
+          <div class="text-gray">50 000 ₽</div>
+        </div>
+        <form class="intro__discount-form" id="form">
+          <input type="text" name="phone" placeholder="+7 999-99-99" required />
+          <button type="submit" aria-label="Подобрать">подобрать авто</button>
+        </form>
+      </div>
+    </Section>
+
+    <!-- Choose Professionals -->
+    <Section name="services">
+      <H2 class="title">
+        Выбирайте <span class="text-primary">профессионалов</span>
+      </H2>
+
+      <div class="services__list">
+        <div class="services__service variant-profi">
+          <Icon src="funding.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Фиксированные цены
+            </div>
+            <div class="services__service-text">
+              Никаких скрытых платежей, комиссий и доплат
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="charity.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Не берем процент от торга
+            </div>
+            <div class="services__service-text">
+              Ищем лучший автомобиль для Вас а не доп заработок
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="piston.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Проверяем эндоскопом
+            </div>
+            <div class="services__service-text">
+              Все скрытые проблемы двигателя выявляем на 100%
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="garage.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Большой опыт работы
+            </div>
+            <div class="services__service-text">
+              Мы знаем все проблемные места и выявим все недостатки
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="vision.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Базы автомобилей
+            </div>
+            <div class="services__service-text">
+              Доступ ко всем мировым базам автомобилей
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="privacy-policy.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">Честность</div>
+            <div class="services__service-text">
+              Прозрачность подбора на всех этапах. Отчеты в мессенджерах
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Reviews -->
+    <Section name="reviews" id="reviews">
+      <H2>
+        Сотни <span class="text-primary">положительных отзывов</span>
+        на разных площадках
+      </H2>
+
+      <div class="reviews__swiper swiper">
+        <div class="swiper-wrapper">
+          {
+            Array.from({ length: 6 }).map((_, i) => (
+              <div class="swiper-slide reviews__review">
+                <div class="reviews__review-user">
+                  <div class="reviews__review-img">
+                    <H2>И</H2>
+                  </div>
+                  <div class="flex-col">
+                    <div class="reviews__review-name">Иван Иванов</div>
+                    <div class="reviews__review-stars">
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                    </div>
+                  </div>
+                </div>
+                <p class="reviews__review-desc">
+                  Спасибо огромное ребятам за подбор машины. Давно хотел сменить
+                  свой старый форда на более свежую машину, мне помогли
+                  подобрать мазду 6 2018 года в идеальном состоянии, езжу и
+                  радуюсь))
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="reviews__footer">
+        <div class="reviews__footer-logos">
+          <Image src="logos/yandex.svg" />
+          <Image src="logos/avito.svg" />
+        </div>
+        <div class="reviews__footer-navigation">
+          <div
+            class="swiper-button-prev"
+            role="button"
+            aria-label="Назад"
+            tabindex="0"
+          >
+          </div>
+          <div
+            class="swiper-button-next"
+            role="button"
+            aria-label="Вперед"
+            tabindex="0"
+          >
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- About -->
+    <Section name="about">
+      <div
+        class="about__video"
+        data-fancybox="about"
+        data-src="./assets/videos/test.mp4"
+        role="button"
+        aria-label="Play video"
+        tabindex="-1"
+      >
+        <div class="bg-img">
+          <Image src="about-poster.png" />
+        </div>
+
+        <Icon src="play.svg" />
+        <span>О нашей компании</span>
+      </div>
+      <div class="about__text">
+        Множество компаний сегодня предлагает услуги автоподбора. Они
+        соревнуются друг с другом, уверяя, что именно их сервис — лучший.
+        <br /><br />
+        Автоблогеры активно продвигают свои бренды, но часто далеки от реальной работы
+        с подбором.
+        <br /><br />
+        Даже "эксперты" с досок объявлений, вооружившись толщиномером и серьезным
+        выражением лица, претендуют на звание профессионалов. Однако каждый раз автоподбор
+        превращается в игру на удачу.
+        <br /><br />
+        <strong>
+          С нами же — <span>вы</span> можете быть <span>уверены</span> в профессионализме
+          и высоком <span>качестве результата</span>.
+        </strong>
+      </div>
+    </Section>
+
+    <!-- Help buying new car -->
+    <Section name="market" main>
+      <H2 class="title">
+        Чем мы поможем
+        <span class="text-primary">при покупке нового авто?</span>
+      </H2>
+      <ul class="market__disadvantages list-check">
+        <li class="market__disadvantages-item">
+          Консультация компетентных специалистов по выбору марки, модели
+          будущего авто, а также по способам оплаты.
+        </li>
+        <li class="market__disadvantages-item">
+          Подбор новых авто по всем дилерам с целью поиска самых выгодных
+          условий для приобретения.
+        </li>
+        <li class="market__disadvantages-item">
+          Сопровождение сделки: помощь в заключении договора, проверка
+          документов на авто.
+        </li>
+        <li class="market__disadvantages-item">
+          Проверка нового авто перед покупкой в салоне на предмет отсутствия
+          дефектов, соответствия комплектации и работоспособности.
+        </li>
+        <li class="market__disadvantages-item">
+          Дополнительный пакет услуг включает подбор страховой компании для
+          приобретения полиса, помощь в постановке на учет и оформлении кредита,
+          а также других сопутствующих.
+        </li>
+      </ul>
+      <div class="market__img">
+        <Image src="market-img.png" />
+      </div>
+      <div class="subtitle">
+        <span
+          >Стоимость подбора нового авто СПб в нашей компании напрямую зависит
+          от цены приобретаемой машины и определяется индивидуально для каждого
+          клиента.</span
+        >
+        <div
+          class="btn variant-solid"
+          role="button"
+          aria-label="Подобрать автомобиль"
+          tabindex="0"
+          data-modal="form"
+        >
+          Бесплатная консультация
+        </div>
+      </div>
+    </Section>
+
+    <!-- Our services -->
+    <Section name="services">
+      <div class="bg-img">
+        <Image src="services-bg.svg" />
+      </div>
+
+      <H2 class="title">Наши <span class="text-primary">услуги</span></H2>
+
+      <div class="services__list">
+        <div class="services__service">
+          <Icon src="car-insurance.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Подбор автомобиля с пробегом под ключ
+            </div>
+            <ul class="services__service-list">
+              <li>Поиск и проверка автомобилей до результата</li>
+              <li>Комплексная проверка</li>
+              <li>Торг с продавцом</li>
+              <li>Сопровождение сделки</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 10 000 руб.</span>
+              <span class="line-through">от 30 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="broken-car.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Выездная диагностика автомобиля
+            </div>
+            <ul class="services__service-list">
+              <li>Комплексная диагностика автомобиля.</li>
+              <li>Экспертиза перед покупкой.</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 4 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="courier.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Автоэксперт <br /> на день
+            </div>
+            <ul class="services__service-list">
+              <li>Осмотр нескольких автомобилей в течение дня.</li>
+              <li>Передвижение на автомобиле эксперта.</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 12 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="engine.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Эндоскопия <br />
+              двигателя
+            </div>
+            <div class="services__service-text">Определим:</div>
+            <ul class="services__service-list">
+              <li>Износ стенок цилиндров (задиры)</li>
+              <li>Состояние форсунок</li>
+              <li>Состояние маслосъемных колпачков</li>
+              <li>Состояние клапанов</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 5 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="car-insurance2.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Подбор нового автомобиля
+            </div>
+            <ul class="services__service-list">
+              <li>Найдем лучшее предложение среди официальных дилеров</li>
+              <li>Получим максимальную скидку.​​​​​​</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 20 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="money.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Оценка <br /> перед продажей
+            </div>
+            <ul class="services__service-list">
+              <li>Проверка автомобиля и определение его рыночной стоимости.</li>
+              <li>Консультация эксперта по правильной и безопасной продаже</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 6 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services__additional">
+        <H2>Дополнительные <span class="text-primary">услуги</span></H2>
+
+        <ul class="services__additional-list">
+          <li class="services__additional-item">
+            <div class="services__additional-title">
+              Проверка нового автомобиля перед получением в автосалоне
+            </div>
+            <div class="text-primary">от 5 000 руб.</div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </li>
+          <li class="services__additional-item">
+            <div class="services__additional-title">
+              Сопровождение сделки в ГИБДД
+            </div>
+            <div class="text-primary">от 5 000 руб.</div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </li>
+          <li class="services__additional-item">
+            <div class="services__additional-title">Перегон автомобиля</div>
+            <div class="text-primary">от 10 000 руб.</div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </li>
+        </ul>
+
+        <div class="subtitle">
+          В 90% случаев стоимость автоподбора бесплатна, за счет
+          аргументированного торга
+        </div>
+      </div>
+    </Section>
+
+    <!-- Choose the best -->
+    <Section name="best">
+      <H2 class="title">
+        Выбирайте <span class="text-primary">лучших</span>
+      </H2>
+      <ul class="best__list">
+        <li class="best__list-item">
+          <H2>КОЛИЧЕСТВО</H2>
+          <p class="best__list-desc">
+            ежедневно мы осматриваем более 30-ти автомобилей, что позволяет нам
+            оперативно уберечь вас от хлама, и в кратчайшие сроки подобрать
+            хороший автомобиль
+          </p>
+        </li>
+        <li class="best__list-item">
+          <H2>КАЧЕСТВО</H2>
+          <p class="best__list-desc">
+            имеем самое передовое техническое оснащение. Можем проводить
+            диагностику любых автомобилей, вплоть до самых свежих версий
+            немецких флагманов.
+          </p>
+        </li>
+        <li class="best__list-item">
+          <H2>СКОРОСТЬ</H2>
+          <p class="best__list-desc">
+            имеем несколько собственных автосервисов с подъёмниками, что
+            позволяет существенно увеличить количество диагностируемых авто и
+            снизить цену на подбор.
+          </p>
+        </li>
+      </ul>
+      <div class="subtitle reversed">
+        <span class="text-primary">
+          Выполняем заказы на поиск автомобиля под ключ</span
+        >
+        от 3 дней
+      </div>
+    </Section>
+
+    <!-- Points -->
+    <Section name="points">
+      <H2 class="title">
+        Проверяем каждое авто
+        <span class="text-primary">по 205 пунктам</span>
+      </H2>
+
+      <div class="points__list">
+        <div class="points__service">
+          <div class="points__service-header">
+            <Icon src="law.svg" />
+            <H3 class="text-primary">Юридическая проверка</H3>
+          </div>
+          <ul class="points__service-list">
+            <li>Проверка подлинности ПТС</li>
+            <li>Проверка корректности заполнения ПТС</li>
+            <li>Проверка соответствия данных ПТС машины</li>
+            <li>Проверка номера рамы</li>
+          </ul>
+          <div
+            class="points__service-link"
+            role="button"
+            tabindex="0"
+            aria-label="Подробнее"
+            data-fancybox="points"
+            data-src="#point-1"
+          >
+            Все 23 пункта
+          </div>
+
+          <div class="points__point" id="point-1">
+            <div class="points__point-content">
+              <H3 class="text-primary">Юридическая проверка</H3>
+              <ul class="points__service-list">
+                <li>Проверка подлинности ПТС</li>
+                <li>Проверка корректности заполнения ПТС</li>
+                <li>Проверка соответствия данных ПТС машины</li>
+                <li>Проверка номера рамы</li>
+                <li>Определение количества владельцев в ПТС</li>
+                <li>Проверка, является ли ПТС оригиналом</li>
+                <li>Проверка корректности заполнения СТС</li>
+                <li>Проверка наличия сервисной книжки и инструкции</li>
+                <li>Проверка корректности заполнения сервисной книжки</li>
+                <li>
+                  Просмотр предъявляемых продавцом документов по обслуживанию
+                  машины на предмет регламентируемых работ
+                </li>
+                <li>Проверка соответствия автомобиля документам</li>
+                <li>
+                  Проверка присутствия идентификационной шильды на автомобиле
+                </li>
+                <li>Осмотр выбитого VIN номера на кузове</li>
+                <li>Проверка VIN номера из блока ЭБУ</li>
+                <li>При возможности проверка наличия номера двигателя</li>
+                <li>Проверка автомобиля по базе залога</li>
+                <li>Проверка автомобиля по базе кредита</li>
+                <li>Проверка автомобиля по базе угона</li>
+                <li>Проверка автомобиля по базе запрета на рег. действия</li>
+                <li>Проверка автомобиля на другие юридические обременения</li>
+                <li>Проверка продавца на соответствия документам</li>
+                <li>Проверка коммерческого использования ТС</li>
+                <li>Проверка полиса ОСАГО</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="points__service">
+          <div class="points__service-header">
+            <Icon src="car-door.svg" />
+            <H3 class="text-primary">Проверка <br /> кузова </H3>
+          </div>
+          <ul class="points__service-list">
+            <li>Общий осмотр авто и проверка кузова</li>
+            <li>Проверка силовой структуры кузова передней части автомобиля</li>
+            <li>Проверка силовой структуры кузова задней части автомобиля</li>
+            <li>Проверка кузова на коррозию</li>
+          </ul>
+          <div
+            class="points__service-link"
+            role="button"
+            tabindex="0"
+            aria-label="Подробнее"
+            data-fancybox="points"
+            data-src="#point-2"
+          >
+            Все 20 пункта
+          </div>
+
+          <div class="points__point" id="point-2">
+            <div class="points__point-content">
+              <H3 class="text-primary">Проверка кузова </H3>
+              <ul class="points__service-list">
+                <li>Общий осмотр авто и проверка кузова</li>
+                <li>
+                  Проверка силовой структуры кузова передней части автомобиля
+                </li>
+                <li>
+                  Проверка силовой структуры кузова задней части автомобиля
+                </li>
+                <li>Проверка кузова на коррозию</li>
+                <li>Проверка оригинальности передних фар и задних фонарей</li>
+                <li>Проверка оригинальности остекления автомобиля</li>
+                <li>Проверка, является ли ЛКП автомобиля заводским</li>
+                <li>Проверка соответствия цвета автомобиля документам</li>
+                <li>Проверка кузова на визуальные изъяны</li>
+                <li>Проверка качества сборки кузовных элементов</li>
+                <li>Проверка целостности переднего телевизора</li>
+                <li>Проверка целостности переднего усилителя бампера</li>
+                <li>Проверка целостности задней панели</li>
+                <li>Проверка передней подвески</li>
+                <li>Проверка состояния колесных дисков</li>
+                <li>Проверка величины выработки тормозных дисков</li>
+                <li>Проверка на отсутствие трещин лобового стекла</li>
+                <li>Проверка кузова на косметические дефекты</li>
+                <li>Визуальный осмотр передней оптики на дефект</li>
+                <li>Визуальный осмотр задней оптики на дефект</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="points__service">
+          <div class="points__service-header">
+            <Icon src="electric-vehicle.svg" />
+            <H3 class="text-primary">Проверка электронных систем</H3>
+          </div>
+          <ul class="points__service-list">
+            <li>Проверка работы кондиционера</li>
+            <li>Проверка работы усилителя рулевого управления</li>
+            <li>Проверка работы электроосвещения</li>
+            <li>Проверка отсутствия SRS (подушки безопасности)</li>
+          </ul>
+          <div
+            class="points__service-link"
+            role="button"
+            tabindex="0"
+            aria-label="Подробнее"
+            data-fancybox="points"
+            data-src="#point-3"
+          >
+            Все 20 пункта
+          </div>
+
+          <div class="points__point" id="point-3">
+            <div class="points__point-content">
+              <H3 class="text-primary">Проверка электронных систем</H3>
+              <ul class="points__service-list">
+                <li>Проверка работы кондиционера</li>
+                <li>Проверка работы усилителя рулевого управления</li>
+                <li>Проверка работы электроосвещения</li>
+                <li>Проверка отсутствия SRS (подушки безопасности)</li>
+                <li>Проверка системы ABS (антиблокировочная система)</li>
+                <li>Чтение ошибок в блоке управления двигателем</li>
+                <li>Чтение ошибок в блоке управления трансмиссией</li>
+                <li>Проверка работоспособности люка</li>
+                <li>Проверка работоспособности стеклоподъёмников</li>
+                <li>Проверка работоспособности приводов сидений</li>
+                <li>Проверка работоспособности приводов дворников</li>
+                <li>Проверка работоспособности приводов мультимедийной</li>
+                <li>Проверка работоспособности других систем автомобиля</li>
+                <li>Проверка работоспособности электропривода зеркал</li>
+                <li>Чтение всех остальных электронных блоков</li>
+                <li>Проверка звуковых сигналов</li>
+                <li>Проверка штатного холодильника, при наличии</li>
+                <li>Проверка Key less- Go, при наличии</li>
+                <li>Проверка камеры кругового обзора, при наличии</li>
+                <li>Проверка работы внутреннего освещения</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="points__service">
+          <div class="points__service-header">
+            <Icon src="oil-change.svg" />
+            <H3 class="text-primary">Проверка <br /> двигателя </H3>
+          </div>
+          <ul class="points__service-list">
+            <li>Проверка корректности работы</li>
+            <li>Проверка отсутствия посторонних звуков</li>
+            <li>Проверка тяговых свойств двигателя</li>
+            <li>Проверка уровня масла в двигателе</li>
+            <li>Электронная диагностика двигателя</li>
+          </ul>
+          <div
+            class="points__service-link"
+            role="button"
+            tabindex="0"
+            aria-label="Подробнее"
+            data-fancybox="points"
+            data-src="#point-4"
+          >
+            Все 12 пункта
+          </div>
+
+          <div class="points__point" id="point-4">
+            <div class="points__point-content">
+              <H3 class="text-primary">Проверка двигателя</H3>
+              <ul class="points__service-list">
+                <li>Проверка корректности работы</li>
+                <li>Проверка отсутствия посторонних звуков</li>
+                <li>Проверка тяговых свойств двигателя</li>
+                <li>Проверка уровня масла в двигателе</li>
+                <li>Электронная диагностика двигателя</li>
+                <li>Проверка растяжения цепи ГРМ</li>
+                <li>
+                  Визуальная оценка состояния выпускной системы автомобиля
+                  (глушитель)
+                </li>
+                <li>
+                  Уточнение используемых ГСМ (горюче-смазочных материалов) при
+                  использовании и обслуживании
+                </li>
+                <li>Визуальный осмотр на запотевание масла</li>
+                <li>
+                  Визуальный осмотр закоксованности мотора через масляную
+                  заливную горловину
+                </li>
+                <li>Проверка состояния моторного масла</li>
+                <li>Проверка работоспособности предпускового отопителя</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="points__service">
+          <div class="points__service-header">
+            <Icon src="manual.svg" />
+            <H3 class="text-primary">Проверка <br /> трансмиссии </H3>
+          </div>
+          <ul class="points__service-list">
+            <li>
+              Проверка уровня и качества масла в трансмиссии, при возможности
+              таковой
+            </li>
+            <li>Проверка, где и как обслуживалась трансмиссия</li>
+            <li>Проверка работоспособности трансмиссии</li>
+          </ul>
+          <div
+            class="points__service-link"
+            role="button"
+            tabindex="0"
+            aria-label="Подробнее"
+            data-fancybox="points"
+            data-src="#point-5"
+          >
+            Все 8 пункта
+          </div>
+
+          <div class="points__point" id="point-5">
+            <div class="points__point-content">
+              <H3 class="text-primary">Проверка трансмиссии</H3>
+              <ul class="points__service-list">
+                <li>
+                  Проверка уровня и качества масла в трансмиссии, при
+                  возможности таковой
+                </li>
+                <li>Проверка, где и как обслуживалась трансмиссия</li>
+                <li>Проверка работоспособности трансмиссии</li>
+                <li>Оценка общего износа</li>
+                <li>Выявление электронных ошибок</li>
+                <li>
+                  Проверка трансмиссии и в предельных режимах, при возможности
+                </li>
+                <li>
+                  Оценка состояния износа фрикционов сцепления и корректность
+                  работы выжимного механизма (для МКПП)
+                </li>
+                <li>
+                  Визуальный осмотр на предмет течи масла, при наличии
+                  возможности
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="points__service">
+          <div class="points__service-header">
+            <Icon src="3d-design.svg" />
+            <H3 class="text-primary">Компьютерная диагностика </H3>
+          </div>
+          <ul class="points__service-list">
+            <li>Проверка работоспособности электроники</li>
+            <li>Выявление ошибок в блоке ABS</li>
+            <li>Выявление ошибок в блоке SRS</li>
+            <li>Выявление ошибок в блоке климат контроля</li>
+          </ul>
+          <div
+            class="points__service-link"
+            role="button"
+            tabindex="0"
+            aria-label="Подробнее"
+            data-fancybox="points"
+            data-src="#point-6"
+          >
+            Все 22 пункта
+          </div>
+
+          <div class="points__point" id="point-6">
+            <div class="points__point-content">
+              <H3 class="text-primary">Компьютерная диагностика</H3>
+              <ul class="points__service-list">
+                <li>Проверка роботоспособности электроники</li>
+                <li>Выявление ошибок в блоке ABS</li>
+                <li>Выявление ошибок в блоке SRS</li>
+                <li>Выявление ошибок в блоке климат контроля</li>
+                <li>Выявление ошибок в блоке управления двигателем</li>
+                <li>Выявление ошибок в блоке управления трансмиссией</li>
+                <li>Выявление ошибок в блоке управления электронного ключа</li>
+                <li>Выявление ошибок в блоке управления поного привода</li>
+                <li>Выявление ошибок в блоке управления сертификацией</li>
+                <li>Выявление ошибок в блоке управления дверей</li>
+                <li>Выявление ошибок в блоке управления сервоприводов</li>
+                <li>Выявление ошибок в блоке управления стояночным тормозом</li>
+                <li>Выявление ошибок в блоке управления освещением</li>
+                <li>
+                  Выявление ошибок в блоке управления парковочным ассистентом
+                </li>
+                <li>
+                  Выявление ошибок в блоке управления подвеской (для
+                  пневмоподвески)
+                </li>
+                <li>Выявление ошибок в блоке управления мультимедиа</li>
+                <li>
+                  Поиск и сравнение подлинности пробега при наличии технической
+                  такой же возможности
+                </li>
+                <li>Выявление VIN номера</li>
+                <li>Проверка истории ошибок автомобиля</li>
+                <li>Проверка напряжения в сети</li>
+                <li>Анализ текущих параметров</li>
+                <li>Анализ пройденного пробега после сброса кодов ошибок</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Recommend -->
+    <Section name="recommend">
+      <H2 class="title">
+        Мы - те, <span class="text-primary">кого рекомендуют </span>
+      </H2>
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {
+            Array.from({ length: 6 }).map((_, i) => (
+              <div
+                class="swiper-slide"
+                data-fancybox="recommend"
+                data-src="./assets/img/recommend/1.png"
+              >
+                <Image src="recommend/1.png" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="recommend__navigation">
+        <div
+          class="swiper-button-prev"
+          role="button"
+          aria-label="Назад"
+          tabindex="0"
+        >
+        </div>
+        <div
+          class="swiper-button-next"
+          role="button"
+          aria-label="Вперед"
+          tabindex="0"
+        >
+        </div>
+      </div>
+    </Section>
+
+    <!-- News -->
+    <Section name="news">
+      <div class="news__text">
+        <p>
+          Актуальные новости и полезная информация в наших соцсетях. Узнавайте
+          первыми о событиях в автомире и в работе нашего автоподбора.
+        </p>
+        <Image src="qr.svg" />
+      </div>
+      <div class="news__img">
+        <Image src="news-img.png" />
+        <div class="lines">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Daily Report -->
+    <Section name="report">
+      <Image class="report__img" src="report-img.png" />
+      <div class="report__text">
+        <H2>Ежедневный отчет о проверке автомобиля вам на телефон</H2>
+        <div class="report__text-desc">
+          Результаты проверки, подробные отчеты и наши рекомендации по выбору
+          автомобиля Вы сможете получить черз удобный для Вас способ связи.
+          <br /><br />
+          Оперативно высылаем листы осмотра, и всю информацию по проверенным автомобилям.
+        </div>
+        <div
+          class="btn variant-outline"
+          role="button"
+          aria-label="Подобрать автомобиль"
+          tabindex="0"
+          data-modal="form"
+        >
+          Подобрать автомобиль
+        </div>
+      </div>
+      <div class="subtitle">
+        <div></div>
+      </div>
+    </Section>
+
+    <!-- FAQ -->
+    <Section name="faq">
+      <H2 class="title">Отвечаем на <span>ваши вопросы</span></H2>
+      <div class="faq__list">
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Заключается ли договор на подбор автомобиля?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Сколько времени обычно занимает автоподбор?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            А если вы не сможете подобрать автомобиль, который я заказываю?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Могу ли я отказаться от найденного автомобиля?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Вы проводите осмотр автомобиля на подъемнике?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">Делаете ли вы эндоскопию двигателя?</div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>

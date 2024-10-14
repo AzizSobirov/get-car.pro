@@ -5,6 +5,7 @@ interface Props {
   alt?: string;
   loading?: "lazy" | "eager";
   tabindex?: string;
+  role?: string;
 }
 
 const {
@@ -12,6 +13,7 @@ const {
   src,
   alt = "",
   loading = "lazy",
+  role,
   ...rest
 } = Astro.props;
 
@@ -37,11 +39,17 @@ let image: any = true;
 // };
 
 // await getImg();
+
+const additional: any = { ...rest };
+
+if (role) {
+  additional.role = role;
+}
 ---
 
 {
   image && (
-    <div class="icon" {...rest}>
+    <div class="icon" {...additional}>
       <img
         class:list={[classname]}
         src={`./assets/img/icons/${src}`}

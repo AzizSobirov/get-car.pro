@@ -285,27 +285,27 @@ var mistakeAfterSwiper = new Swiper(".mistake .swiper-after", {
   },
 });
 
-// var gallerySwiper = new Swiper(".gallery .swiper", {
-//   slidesPerView: 2,
-//   spaceBetween: 10,
-//   navigation: {
-//     nextEl: ".gallery .swiper-button-next",
-//     prevEl: ".gallery .swiper-button-prev",
-//   },
-//   breakpoints: {
-//     769: {
-//       slidesPerView: 3,
-//       spaceBetween: 20,
-//     },
-//     1025: {
-//       slidesPerView: 4,
-//       spaceBetween: 20,
-//     },
-//   },
-// });
+var recommendSwiper = new Swiper(".recommend .swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 15,
+  navigation: {
+    nextEl: ".recommend .swiper-button-next",
+    prevEl: ".recommend .swiper-button-prev",
+  },
+  breakpoints: {
+    1025: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+  },
+});
 
 // fancybox
-let dataFancybox = ["gallery", "reviews", "about", "points"];
+let dataFancybox = ["gallery", "recommend", "about", "points", "faq", "videos"];
 dataFancybox.forEach((name) => {
   Fancybox.bind(`[data-fancybox="${name}"]`, {
     Images: { Panzoom: { maxScale: 3 } },

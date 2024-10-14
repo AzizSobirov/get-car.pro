@@ -1,0 +1,783 @@
+---
+import App from "../layouts/App.astro";
+import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
+import { TheForm } from "@components";
+
+const detect = [
+  "Отсутствие хона задир",
+  "Плохое прилегание клапана",
+  "Сырой нагар на клапане",
+  "Хорошее прилегание клапана",
+  "Хороший хон, след от юбки поршня",
+  "Сколы на турбине от песка",
+  "Нет компрессии",
+  "KIA Sportage задиры в цилиндре",
+  "Hyundai ix35 задиры в цилиндре",
+  "Масло в ВМТ",
+  "Незначительный задир цилиндра",
+  "Остаток поршня на цилиндре ДВС",
+];
+---
+
+<App title="Эндоскопия">
+  <main>
+    <!-- Intro -->
+    <Section name="intro">
+      <H2 class="variant-2">
+        Эндоскопия <span>двигателя</span>
+        <br /> в Москве и Санкт-Петербурге
+      </H2>
+      <div class="intro__img">
+        <Image class="img-3" src="intro/3.png" />
+      </div>
+
+      <div class="intro__discount">
+        <div class="intro__discount-price">
+          <H2>от 5 000 ₽ </H2>
+          <div class="text-gray">10 000 ₽</div>
+        </div>
+      </div>
+
+      <div class="intro__we-do variant-2">
+        <p>
+          <span class="text-primary">Эндоскопия</span> позволяет провести диагностику
+          мотора и <span class="text-primary"
+            >максимально точно определить состояние</span
+          >
+          цилиндропоршневой группы без разбора. <span class="text-primary"
+            >Проверка эндоскопом</span
+          > на сегодняшний день является отличной альтернативой устаревшему методу
+          разбора двигателя, который требует много сил и времени.
+        </p>
+        <div
+          class="btn variant-outline"
+          role="button"
+          aria-label="Заказать эндоскопию"
+          tabindex="0"
+          data-modal="form"
+        >
+          Заказать эндоскопию
+        </div>
+      </div>
+    </Section>
+
+    <!-- Choose the best -->
+    <Section name="best" main>
+      <H2 class="title">
+        Выбирайте <span class="text-primary">лучших</span>
+      </H2>
+      <ul class="best__list">
+        <li class="best__list-item">
+          <H2>КОЛИЧЕСТВО</H2>
+          <p class="best__list-desc">
+            ежедневно мы осматриваем более 30-ти автомобилей, что позволяет нам
+            оперативно уберечь вас от хлама, и в кратчайшие сроки подобрать
+            хороший автомобиль
+          </p>
+        </li>
+        <li class="best__list-item">
+          <H2>КАЧЕСТВО</H2>
+          <p class="best__list-desc">
+            имеем самое передовое техническое оснащение. Можем проводить
+            диагностику любых автомобилей, вплоть до самых свежих версий
+            немецких флагманов.
+          </p>
+        </li>
+        <li class="best__list-item">
+          <H2>СКОРОСТЬ</H2>
+          <p class="best__list-desc">
+            имеем несколько собственных автосервисов с подъёмниками, что
+            позволяет существенно увеличить количество диагностируемых авто и
+            снизить цену на подбор.
+          </p>
+        </li>
+      </ul>
+      <div class="subtitle reversed">
+        <span class="text-primary">
+          Выполняем заказы на поиск автомобиля под ключ</span
+        >
+        от 3 дней
+      </div>
+    </Section>
+
+    <!-- Reviews -->
+    <Section name="reviews" id="reviews">
+      <H2>
+        Сотни <span class="text-primary">положительных отзывов</span>
+        на разных площадках
+      </H2>
+
+      <div class="reviews__swiper swiper">
+        <div class="swiper-wrapper">
+          {
+            Array.from({ length: 6 }).map((_, i) => (
+              <div class="swiper-slide reviews__review">
+                <div class="reviews__review-user">
+                  <div class="reviews__review-img">
+                    <H2>И</H2>
+                  </div>
+                  <div class="flex-col">
+                    <div class="reviews__review-name">Иван Иванов</div>
+                    <div class="reviews__review-stars">
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                      <Icon src="star.svg" />
+                    </div>
+                  </div>
+                </div>
+                <p class="reviews__review-desc">
+                  Спасибо огромное ребятам за подбор машины. Давно хотел сменить
+                  свой старый форда на более свежую машину, мне помогли
+                  подобрать мазду 6 2018 года в идеальном состоянии, езжу и
+                  радуюсь))
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="reviews__footer">
+        <div class="reviews__footer-logos">
+          <Image src="logos/yandex.svg" />
+          <Image src="logos/avito.svg" />
+        </div>
+        <div class="reviews__footer-navigation">
+          <div
+            class="swiper-button-prev"
+            role="button"
+            aria-label="Назад"
+            tabindex="0"
+          >
+          </div>
+          <div
+            class="swiper-button-next"
+            role="button"
+            aria-label="Вперед"
+            tabindex="0"
+          >
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Videos -->
+    <Section name="videos">
+      <H2 class="title">
+        Видео примеры <span class="text-primary">осмотра эндоскопом</span>
+      </H2>
+      <div class="videos__list">
+        {
+          Array.from({ length: 3 }).map((_, i) => (
+            <div
+              class="videos__list-item"
+              data-fancybox="videos"
+              data-src="./assets/videos/test.mp4"
+              role="button"
+              aria-label="Play video"
+              tabindex="-1"
+            >
+              <Image src="video-poster.png" />
+              <Icon src="play.svg" />
+            </div>
+          ))
+        }
+      </div>
+    </Section>
+
+    <!-- About -->
+    <Section name="about">
+      <div
+        class="about__video"
+        data-fancybox="about"
+        data-src="./assets/videos/test.mp4"
+        role="button"
+        aria-label="Play video"
+        tabindex="-1"
+      >
+        <div class="bg-img">
+          <Image src="about-poster.png" />
+        </div>
+
+        <Icon src="play.svg" />
+        <span>О нашей компании</span>
+      </div>
+      <div class="about__text">
+        Множество компаний сегодня предлагает услуги автоподбора. Они
+        соревнуются друг с другом, уверяя, что именно их сервис — лучший.
+        <br /><br />
+        Автоблогеры активно продвигают свои бренды, но часто далеки от реальной работы
+        с подбором.
+        <br /><br />
+        Даже "эксперты" с досок объявлений, вооружившись толщиномером и серьезным
+        выражением лица, претендуют на звание профессионалов. Однако каждый раз автоподбор
+        превращается в игру на удачу.
+        <br /><br />
+        <strong>
+          С нами же — <span>вы</span> можете быть <span>уверены</span> в профессионализме
+          и высоком <span>качестве результата</span>.
+        </strong>
+      </div>
+    </Section>
+
+    <!-- Detect -->
+    <Section name="detect">
+      <H2 class="title">
+        Что мы выявляем при
+        <span class="text-primary">обследовании эндоскопом</span>
+      </H2>
+      <div class="detect__list">
+        {
+          detect.map((item, i) => (
+            <div class="detect__list-item">
+              <Image src={`detect/1.png`} />
+              <p>{item}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="subtitle">
+        <span
+          >Стоимость подбора нового авто СПб в нашей компании напрямую зависит
+          от цены приобретаемой машины и определяется индивидуально для каждого
+          клиента.</span
+        >
+        <div
+          class="btn variant-solid"
+          role="button"
+          aria-label="Подобрать автомобиль"
+          tabindex="0"
+          data-modal="form"
+        >
+          Бесплатная консультация
+        </div>
+      </div>
+    </Section>
+
+    <!-- Our services -->
+    <Section name="services">
+      <div class="bg-img">
+        <Image src="services-bg.svg" />
+      </div>
+
+      <H2 class="title">Наши <span class="text-primary">услуги</span></H2>
+
+      <div class="services__list">
+        <div class="services__service">
+          <Icon src="car-insurance.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Подбор автомобиля с пробегом под ключ
+            </div>
+            <ul class="services__service-list">
+              <li>Поиск и проверка автомобилей до результата</li>
+              <li>Комплексная проверка</li>
+              <li>Торг с продавцом</li>
+              <li>Сопровождение сделки</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 10 000 руб.</span>
+              <span class="line-through">от 30 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="broken-car.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Выездная диагностика автомобиля
+            </div>
+            <ul class="services__service-list">
+              <li>Комплексная диагностика автомобиля.</li>
+              <li>Экспертиза перед покупкой.</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 4 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="courier.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Автоэксперт <br /> на день
+            </div>
+            <ul class="services__service-list">
+              <li>Осмотр нескольких автомобилей в течение дня.</li>
+              <li>Передвижение на автомобиле эксперта.</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 12 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="engine.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Эндоскопия <br />
+              двигателя
+            </div>
+            <div class="services__service-text">Определим:</div>
+            <ul class="services__service-list">
+              <li>Износ стенок цилиндров (задиры)</li>
+              <li>Состояние форсунок</li>
+              <li>Состояние маслосъемных колпачков</li>
+              <li>Состояние клапанов</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 5 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="car-insurance2.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Подбор нового автомобиля
+            </div>
+            <ul class="services__service-list">
+              <li>Найдем лучшее предложение среди официальных дилеров</li>
+              <li>Получим максимальную скидку.​​​​​​</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 20 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service">
+          <Icon src="money.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Оценка <br /> перед продажей
+            </div>
+            <ul class="services__service-list">
+              <li>Проверка автомобиля и определение его рыночной стоимости.</li>
+              <li>Консультация эксперта по правильной и безопасной продаже</li>
+            </ul>
+            <div class="services__service-price">
+              <span class="text-primary">от 6 000 руб.</span>
+            </div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services__additional">
+        <H2>Дополнительные <span class="text-primary">услуги</span></H2>
+
+        <ul class="services__additional-list">
+          <li class="services__additional-item">
+            <div class="services__additional-title">
+              Проверка нового автомобиля перед получением в автосалоне
+            </div>
+            <div class="text-primary">от 5 000 руб.</div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </li>
+          <li class="services__additional-item">
+            <div class="services__additional-title">
+              Сопровождение сделки в ГИБДД
+            </div>
+            <div class="text-primary">от 5 000 руб.</div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </li>
+          <li class="services__additional-item">
+            <div class="services__additional-title">Перегон автомобиля</div>
+            <div class="text-primary">от 10 000 руб.</div>
+            <div
+              class="btn variant-outline"
+              role="button"
+              tabindex="0"
+              aria-label="Заказать"
+              data-modal="form"
+            >
+              Заказать
+            </div>
+          </li>
+        </ul>
+
+        <div class="subtitle">
+          В 90% случаев стоимость автоподбора бесплатна, за счет
+          аргументированного торга
+        </div>
+      </div>
+    </Section>
+
+    <!-- Endoscopy -->
+    <Section name="endoscopy">
+      <H2 class="title">
+        Что можно обнаружить
+        <span class="text-primary"> методом эндоскопии?</span>
+      </H2>
+
+      <div class="endoscopy__content">
+        <p class="endoscopy__content-desc">
+          Проверка двигателя эндоскопом, чаще всего, применяется профессионалами
+          для диагностики камеры сгорания, впускного тракта. Однако, эндоскопы
+          хорошего качества используют и для обследования труднодоступных
+          участков для полного определения технического состояния мотора. Даже
+          нормальные пределы компрессии двигателя могут не указывать на его
+          сильный износ. Поэтому, приобретая поддержанное транспортное средство,
+          покупатель не может понять истинное положение вещей. В этом случае
+          только диагностика двигателя эндоскопом позволит разобраться в
+          состоянии автомобиля.
+        </p>
+
+        <div class="endoscopy__wrapper">
+          <ul class="endoscopy__wrapper-list">
+            <li>
+              <div></div>
+              <span> Износ стенок цилиндра (задиры)</span>
+            </li>
+            <li>
+              <div></div>
+              <span> Состояние топливных форсунок</span>
+            </li>
+            <li>
+              <div></div>
+              <span>Состояние маслосъемных колпачков</span>
+            </li>
+            <li>
+              <div></div>
+              <span> Рабочую кромку выпускных клапанов</span>
+            </li>
+            <li>
+              <div></div>
+              <span>Состояние сальников клапанов</span>
+            </li>
+            <li>
+              <div></div>
+              <span>наличие нагара на колпачках</span>
+            </li>
+          </ul>
+          <Image class="endoscopy__wrapper-img" src="endoscopy-img.png" />
+        </div>
+
+        <p class="endoscopy__content-desc">
+          Данный способ диагностики является очень удобным, так как с помощью
+          эндоскопа можно проникнуть в самые малые отверстия в любое необходимое
+          для проверки место. Эндоскопия мотора может быть проведена и вместе с
+          проверкой других частей автомобилей для обнаружения следов сварки под
+          крылом или внутри дверей. Услуга предоставляется от GETCAR для всех
+          видов транспортных средств.
+        </p>
+      </div>
+    </Section>
+
+    <!-- Recommend -->
+    <Section name="recommend">
+      <H2 class="title">
+        Мы - те, <span class="text-primary">кого рекомендуют </span>
+      </H2>
+
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          {
+            Array.from({ length: 6 }).map((_, i) => (
+              <div
+                class="swiper-slide"
+                data-fancybox="recommend"
+                data-src="./assets/img/recommend/1.png"
+              >
+                <Image src="recommend/1.png" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="recommend__navigation">
+        <div
+          class="swiper-button-prev"
+          role="button"
+          aria-label="Назад"
+          tabindex="0"
+        >
+        </div>
+        <div
+          class="swiper-button-next"
+          role="button"
+          aria-label="Вперед"
+          tabindex="0"
+        >
+        </div>
+      </div>
+    </Section>
+
+    <!-- News -->
+    <Section name="news">
+      <div class="news__text">
+        <p>
+          Актуальные новости и полезная информация в наших соцсетях. Узнавайте
+          первыми о событиях в автомире и в работе нашего автоподбора.
+        </p>
+        <Image src="qr.svg" />
+      </div>
+      <div class="news__img">
+        <Image src="news-img.png" />
+        <div class="lines">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Daily Report -->
+    <Section name="report">
+      <Image class="report__img" src="report-img.png" />
+      <div class="report__text">
+        <H2>Ежедневный отчет о проверке автомобиля вам на телефон</H2>
+        <div class="report__text-desc">
+          Результаты проверки, подробные отчеты и наши рекомендации по выбору
+          автомобиля Вы сможете получить черз удобный для Вас способ связи.
+          <br /><br />
+          Оперативно высылаем листы осмотра, и всю информацию по проверенным автомобилям.
+        </div>
+        <div
+          class="btn variant-outline"
+          role="button"
+          aria-label="Подобрать автомобиль"
+          tabindex="0"
+          data-modal="form"
+        >
+          Подобрать автомобиль
+        </div>
+      </div>
+      <div class="subtitle">
+        <div></div>
+      </div>
+    </Section>
+
+    <!-- FAQ -->
+    <Section name="faq">
+      <H2 class="title">Отвечаем на <span>ваши вопросы</span></H2>
+      <div class="faq__list">
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Заключается ли договор на подбор автомобиля?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Сколько времени обычно занимает автоподбор?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            А если вы не сможете подобрать автомобиль, который я заказываю?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Могу ли я отказаться от найденного автомобиля?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">
+            Вы проводите осмотр автомобиля на подъемнике?
+          </div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="faq__list-item">
+          <div class="faq__list-desc">Делаете ли вы эндоскопию двигателя?</div>
+          <div
+            class="faq__list-btn"
+            role="button"
+            aria-label="Play video"
+            tabindex="0"
+            data-fancybox="faq"
+            data-src="./assets/videos/test.mp4"
+          >
+            <svg
+              width="17"
+              height="21"
+              viewBox="0 0 17 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1665 8.71072L3.68545 0.578298C2.36094 -0.3599 0.529419 0.587214 0.529419 2.21035V18.4752C0.529419 20.0983 2.36094 21.0454 3.68545 20.1073L15.1665 11.9748C16.2918 11.1777 16.2918 9.5078 15.1665 8.71072Z"
+                fill="white"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </Section>
+  </main>
+</App>
