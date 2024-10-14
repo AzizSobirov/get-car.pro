@@ -780,14 +780,12 @@ section {
   }
 
   &__list {
-    margin-top: 20px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px 20px;
 
     @include media("xl") {
-      margin-top: 0;
       grid-template-columns: repeat(2, 1fr);
     }
     @include media("md") {
@@ -806,6 +804,14 @@ section {
     justify-content: flex-start;
     gap: 20px;
     --icon-size: 100px;
+
+    &.variant-profi {
+      align-items: center;
+
+      .services__service-content {
+        height: fit-content;
+      }
+    }
 
     @include media("lg") {
       --icon-size: 80px;
@@ -826,6 +832,10 @@ section {
 
     &-text {
       font-family: var(--font-secondary);
+
+      @include media("xs") {
+        font-size: 14px;
+      }
     }
 
     &-list {
@@ -1023,7 +1033,7 @@ section {
     }
 
     &-list {
-      padding-left: 24px;
+      padding-left: 20px;
       width: 100%;
       font-family: var(--font-secondary);
       display: flex;
@@ -1042,6 +1052,158 @@ section {
       @include media("xs") {
         font-size: 14px;
       }
+    }
+  }
+}
+
+// ** market ** //
+.market {
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 60px;
+
+    @include media("lg") {
+      gap: 40px;
+    }
+    @include media("sm") {
+      gap: 30px;
+    }
+  }
+
+  &__disadvantages {
+    width: 100%;
+    max-width: 510px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+
+    @include media("lg") {
+      max-width: 100%;
+    }
+    @include media("xs") {
+      gap: 20px;
+    }
+
+    &-item {
+      position: relative;
+      padding-left: 24px;
+      font-family: var(--font-secondary);
+
+      @include media("xs") {
+        font-size: 14px;
+      }
+
+      &::before {
+        content: "!";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 100%;
+        color: #fff;
+        font-size: 34px;
+        background: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media("lg") {
+          font-size: 28px;
+        }
+      }
+
+      span {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: -75px;
+    left: 540px;
+    width: 1230px;
+
+    @include media("lg") {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+// ** application ** //
+.application {
+  margin: 100px 0;
+
+  @include media("xl") {
+    margin: 0;
+  }
+
+  &__inner {
+    position: relative;
+    padding-top: 35px;
+    padding-bottom: 80px;
+
+    @include media("lg") {
+      padding-bottom: 45px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      min-width: 100vw;
+      height: 100%;
+      background: var(--primary);
+      z-index: -1;
+
+      @include media("lg") {
+        right: 50%;
+        transform: translate(50%, 0);
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    transform: translateY(-50%);
+    width: 578px;
+    height: 578px;
+    object-fit: contain;
+
+    @include media("xl") {
+      left: -80px;
+      width: 420px;
+      height: 420px;
+    }
+    @include media("lg") {
+      display: none;
+    }
+  }
+
+  .form {
+    margin-left: 520px;
+
+    @include media("xl") {
+      margin-left: 340px;
+    }
+    @include media("lg") {
+      margin-left: 0;
     }
   }
 }
@@ -1095,4 +1257,4 @@ section {
   min-height: 100vh;
 }
 
-// @include show(".mistake");
+// @include show(".application");

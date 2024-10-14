@@ -1,6 +1,7 @@
 ---
 import App from "../layouts/App.astro";
 import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
+import { TheForm } from "@components";
 ---
 
 <App title="Главная">
@@ -22,8 +23,9 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
         <div
           class="btn variant-outline"
           role="button"
-          aria-label="Подробнее"
+          aria-label="Подобрать автомобиль"
           tabindex="0"
+          data-modal="form"
         >
           Подобрать автомобиль
         </div>
@@ -247,6 +249,7 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
           role="button"
           tabindex="0"
           aria-label="Подобрать автомобиль"
+          data-modal="form"
         >
           Подобрать автомобиль
         </div>
@@ -551,6 +554,130 @@ import { H1, H2, H3, Button, Section, Image, Icon } from "@ui";
       </div>
     </Section>
 
-    <!-- <div class="example"></div> -->
+    <!-- Choose Professionals -->
+    <Section name="services">
+      <H2 class="title">
+        Выбирайте <span class="text-primary">профессионалов</span>
+      </H2>
+
+      <div class="services__list">
+        <div class="services__service variant-profi">
+          <Icon src="funding.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Фиксированные цены
+            </div>
+            <div class="services__service-text">
+              Никаких скрытых платежей, комиссий и доплат
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="charity.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Не берем процент от торга
+            </div>
+            <div class="services__service-text">
+              Ищем лучший автомобиль для Вас а не доп заработок
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="piston.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Проверяем эндоскопом
+            </div>
+            <div class="services__service-text">
+              Все скрытые проблемы двигателя выявляем на 100%
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="garage.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Большой опыт работы
+            </div>
+            <div class="services__service-text">
+              Мы знаем все проблемные места и выявим все недостатки
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="vision.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">
+              Базы автомобилей
+            </div>
+            <div class="services__service-text">
+              Доступ ко всем мировым базам автомобилей
+            </div>
+          </div>
+        </div>
+
+        <div class="services__service variant-profi">
+          <Icon src="privacy-policy.svg" />
+          <div class="services__service-content">
+            <div class="services__service-title text-primary">Честность</div>
+            <div class="services__service-text">
+              Прозрачность подбора на всех этапах. Отчеты в мессенджерах
+            </div>
+          </div>
+        </div>
+      </div>
+    </Section>
+
+    <!-- Used Cars Market -->
+    <Section name="market">
+      <H2 class="title">
+        Что не так с
+        <span class="text-primary">вторичным рынком автомобилей?</span>
+      </H2>
+      <ul class="market__disadvantages">
+        <li class="market__disadvantages-item">
+          Сейчас очень много авто ввезенных параллельным импортом. И <span
+            >80% автомобилей</span
+          > имеют <span
+            >скрученный пробег. Большинство подборщиков не смогут этого
+            определить,</span
+          > т.к. нет необходимого оборудования и нет доступа к иностранным базам.
+          У нас все это есть.
+        </li>
+        <li class="market__disadvantages-item">
+          <span>Автосалоны</span> нередко <span>хуже частных продавцов.</span> Зачастую
+          у них имеется два вида диагностики авто. Одна внутренняя, где расписано
+          многое и вторая для клиента, где почти что все хорошо.
+        </li>
+        <li class="market__disadvantages-item">
+          Различные <span>схемы</span> с заменой и <span>подменой VIN</span> номеров.
+          За время своей деятельности мы встретили огромное количество различных
+          схем.
+        </li>
+        <li class="market__disadvantages-item">
+          На рынке <span>полно авто</span> после серьезных <span>дтп</span>,
+          которых нет в отчетах автотеки. <span
+            >«Зеленая» автотека это не гарант хорошего автомобиля.</span
+          > Есть продавцы, которые очень качественно умеют маскировать повреждения
+          и детали
+        </li>
+      </ul>
+      <div class="market__img">
+        <Image src="market-img.png" />
+      </div>
+    </Section>
+
+    <!-- Application -->
+    <Section name="application">
+      <Image class="application__img" src="macbook.png" />
+      <TheForm />
+    </Section>
+
+    <div class="example"></div>
   </main>
 </App>

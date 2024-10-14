@@ -93,25 +93,29 @@ const modal = {
     if (animation) {
       setTimeout(() => {
         target.style.opacity = 1;
-        target.style.transform = "scale(1)";
+        target.style.transform = "translateX(0)";
       }, 50);
     } else {
       target.style.opacity = 1;
-      target.style.transform = "scale(1)";
+      target.style.transform = "translateX(0)";
     }
   },
-  close: function (name, animation) {
+  close: function (name, parent = true) {
     if (!name) {
       this.blocks.forEach((block) => {
         block.style.opacity = 0;
-        block.style.transform = "scale(0.85)";
+        block.style.transform = "translateX(20%)";
+
+        setTimeout(() => {
+          block.style.display = "none";
+        }, 350);
       });
     } else {
       const target = this.el.querySelector(`[data-root=${name}]`);
       target.style.opacity = 0;
-      target.style.transform = "scale(0.85)";
+      target.style.transform = "translateX(20%)";
 
-      if (!animation) {
+      if (!parent) {
         target.style.display = "none";
       } else {
         setTimeout(() => {
@@ -120,7 +124,7 @@ const modal = {
       }
     }
 
-    if (animation) {
+    if (parent) {
       setTimeout(() => {
         this.el.style.display = "none";
       }, 350);
@@ -203,7 +207,7 @@ forms.forEach((form) => {
     }
 
     setTimeout(() => {
-      modal.close("success", true);
+      modal.close("success");
     }, 3000);
   });
 });

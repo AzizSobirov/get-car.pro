@@ -2,4 +2,72 @@
 .form {
   position: relative;
   width: 100%;
+  max-width: 610px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+
+  .text-desc {
+    margin: 5px 0 20px;
+    width: 100%;
+    font-family: var(--font-secondary);
+
+    @include media("sm") {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  }
+
+  .text-xs {
+    font-size: 10px;
+    font-family: var(--font-secondary);
+  }
+
+  form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 40px;
+
+    @include media("sm") {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    @include media("xs") {
+      gap: 12px;
+    }
+
+    input {
+      padding: 10px;
+      width: 100%;
+      color: #fff;
+      font-size: 16px;
+      font-family: var(--font-secondary);
+      border: 1px solid #fff;
+      border-radius: 5px;
+
+      @include media("xs") {
+        font-size: 14px;
+      }
+
+      &::placeholder {
+        color: #fff;
+        opacity: 0.8;
+      }
+    }
+
+    button {
+      padding: 10px;
+      color: var(--primary);
+      font-family: var(--font-secondary);
+      background: #fff;
+      border-radius: 5px;
+
+      @include media("xs") {
+        font-size: 14px;
+      }
+    }
+  }
 }
