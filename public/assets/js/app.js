@@ -87,6 +87,7 @@ const modal = {
   open: function (name, animation = true) {
     const target = this.el.querySelector(`[data-root=${name}]`);
 
+    this.el.classList.add("active");
     this.el.style.display = "flex";
     target.style.display = "flex";
 
@@ -126,6 +127,7 @@ const modal = {
 
     if (parent) {
       setTimeout(() => {
+        this.el.classList.remove("active");
         this.el.style.display = "none";
       }, 350);
     }
@@ -194,21 +196,25 @@ modalTriggers.forEach((trigger) => {
   }
 );
 
+function successSend() {
+  const modalEl = document.querySelector(".modal");
+  if (modalEl.classList.contains("active")) {
+    modal.close("form", false);
+    modal.open("success", false);
+  } else {
+    modal.open("success");
+  }
+
+  setTimeout(() => {
+    modal.close("success");
+  }, 3000);
+}
+
 const forms = document.querySelectorAll("form");
 forms.forEach((form) => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    if (form.id == "form") {
-      modal.open("success");
-    } else {
-      modal.close("form", false);
-      modal.open("success", false);
-    }
-
-    setTimeout(() => {
-      modal.close("success");
-    }, 3000);
+    successSend();
   });
 });
 
