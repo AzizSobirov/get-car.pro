@@ -161,6 +161,7 @@ section {
   }
 
   &__we-do {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1499,6 +1500,10 @@ section {
       }
       @include media("xs") {
         max-width: 280px;
+      }
+
+      &.visibility-hidden {
+        visibility: hidden;
       }
     }
 

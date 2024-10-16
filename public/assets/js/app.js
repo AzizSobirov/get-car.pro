@@ -308,6 +308,22 @@ var recommendSwiper = new Swiper(".recommend .swiper", {
       spaceBetween: 20,
     },
   },
+  on: {
+    slideChange: function () {
+      const activeIndex = recommendSwiper.activeIndex;
+      console.log(activeIndex);
+
+      recommendSwiper.slides.forEach((slide, index) => {
+        if (index < activeIndex) {
+          // Hide slides before active slide
+          slide.classList.add("visibility-hidden");
+        } else {
+          // Show current and next slides
+          slide.classList.remove("visibility-hidden");
+        }
+      });
+    },
+  },
 });
 
 // fancybox
