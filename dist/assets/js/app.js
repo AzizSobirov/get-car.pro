@@ -310,18 +310,19 @@ var recommendSwiper = new Swiper(".recommend .swiper", {
   },
   on: {
     slideChange: function () {
-      const activeIndex = recommendSwiper.activeIndex;
-      console.log(activeIndex);
+      if (window.innerWidth > 1024) {
+        const activeIndex = recommendSwiper.activeIndex;
 
-      recommendSwiper.slides.forEach((slide, index) => {
-        if (index < activeIndex) {
-          // Hide slides before active slide
-          slide.classList.add("visibility-hidden");
-        } else {
-          // Show current and next slides
-          slide.classList.remove("visibility-hidden");
-        }
-      });
+        recommendSwiper.slides.forEach((slide, index) => {
+          if (index < activeIndex) {
+            // Hide slides before active slide
+            slide.classList.add("visibility-hidden");
+          } else {
+            // Show current and next slides
+            slide.classList.remove("visibility-hidden");
+          }
+        });
+      }
     },
   },
 });
